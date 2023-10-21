@@ -10,16 +10,3 @@ let num = 19;
 //     console.log("OK!!!")
 // }
 
-switch (num) {
-    case 42:
-        console.log("Error");
-        break;
-    case 857:
-        console.log("Error");
-        break;
-    case 199:
-        console.log("Yes!!!");
-        break;
-    default: 
-        console.log("Unlucky");
-};
