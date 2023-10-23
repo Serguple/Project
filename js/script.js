@@ -1,12 +1,24 @@
 "use strict";
 
-let num = 19;
+// let be = 69;
 
-// if (num < 50) {
-//     console.log("Too little")
-// } else if (num > 100) {
-//     console.log("Too much")
-// } else {
-//     console.log("OK!!!")
-// }
+// while (be <= 75) {
+//     console.log(be+10);
+//     be++;
+// };
 
+// do {
+//     console.log(be);
+//     be++;
+// } while (be <= 80);
+
+
+for (let i = 1; i < 10; i++) {
+
+    if (i === 6){
+        // break;
+        continue;
+    };
+
+    console.log(i);
+};
