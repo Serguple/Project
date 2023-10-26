@@ -1,74 +1,34 @@
 'use strict';
 
-// Код возьмите из предыдущего домашнего задания
-
-let numberOfFilms;
-
-function start() {
-    numberOfFilms = +prompt("How many films have you watched?", '');
-
-    while(numberOfFilms == "" || isNaN(numberOfFilms) || numberOfFilms == null ) {
-        numberOfFilms = +prompt("How many films have you watched?", '');
+const obj = {
+    name: "mass",
+    height: 1024,
+    width: 1024,
+    colors: {
+        border: "black",
+        bg: "red"
+    },
+    makeTest: function() {
+        console.log("Test")
     }
-    return numberOfFilms;
-}
+}   
 
-function rememberMyFilms() {
-    let l = 0;
-    do {
-        const watchedFilmName = prompt("One of the watched movies?", ''),
-        watchedFilmRating = +prompt("This film's rating?", '');
+// obj.makeTest()
+
+const {border, bg} = obj.colors;
+
+console.log(border, bg);
+
+// for (let key in obj) {
+
+//     if (typeof(obj[key]) == "object") {
+//         for (let i in obj[key]) {
+//             console.log(`Свойство ${i} имеет значение ${obj[key][i]}`)
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${obj[key]}`)
+//     }
     
-        if (watchedFilmName == "" || watchedFilmName.length > 50) {
-            l = 0;
-            continue;
-        }
-        personalMovieDB.movies[watchedFilmName] = watchedFilmRating;
+// }
 
-        l++;
-    } while (l < 2)
-}
-
-function detectPersonalLevel() {
-    if (personalMovieDB.count < 10 && personalMovieDB.count >= 0) {
-        console.log("Просмотрено довольно мало фильмов");
-    } else if (personalMovieDB.count <= 30 && personalMovieDB.count >= 10) {
-        console.log("Вы классический зритель");
-    } else if (personalMovieDB.count > 30) {
-        console.log("Вы киноман");
-    } else {
-        console.log("Произошла ошибка");
-    }
-}
-
-function showMyDB() {
-    if (personalMovieDB.privat === false) {
-        console.log(personalMovieDB)
-    }
-}
-
-function writeYourGenres() {
-    for (let i = 0; i <= 2; i++) {
-        let answer = prompt(`Ваш любимый жанр под номером ${i + 1}`, '');
-        personalMovieDB.genres[i] = answer;
-    }
-}
-
-let personalMovieDB = {
-    count: start(),
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-rememberMyFilms();
-
-detectPersonalLevel();
-
-writeYourGenres();
-
-showMyDB();
-
-console.log(personalMovieDB.count);
-console.log(personalMovieDB.movies);
+// console.log(Object.keys(obj).length)
